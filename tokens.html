@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="tokensPage">
+    <div class="token-container">
+        <a href="index.html" class="token-back-arrow">&#8592; Back</a>
+        <h2>Generate Your Token</h2>
+        <form id="tokenForm">
+            <label for="department">Select Department:</label>
+            <select id="department" required>
+                <option value="" disabled selected>Select a department</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="medicine">General Medicine</option>
+                <option value="radiology">Radiology</option>
+                <option value="lab">Lab Tests</option>
+            </select>
+            <button type="submit">Get Token</button>
+        </form>
+        <p id="tokenStatus"></p>
+    </div>
+
+    <script>
+        document.getElementById("tokenForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const department = document.getElementById("department").value;
+            if (department) {
+                document.getElementById("tokenStatus").innerHTML = `Your token for <strong>${department}</strong> has been generated!`;
+            }
+        });
+    </script>
+</body>
+</html>

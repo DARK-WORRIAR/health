@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthlink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="signup">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label for="idcard">ID Card Number:</label>
+            <input type="text" id="idcard" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#login" onclick="showLogin()">Login here</a></p>
+    </section>
+
+    <section id="login" style="display:none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="home" style="display:none;">
+        <h2>Welcome to the Healthlink</h2>
+        <div class="container-grid">
+            <div class="container" onclick="navigate('tokens.html')">Tokens</div>
+            <div class="container" onclick="navigate('doctors.html')">Doctors</div>
+            <div class="container" onclick="navigate('pharmacy.html')">Pharmacy</div>
+            <div class="container" onclick="navigate('Labs.html')">Labs</div>
+            <div class="container" onclick="navigate('X Rays.html')">X Rays</div>
+            <div class="container" onclick="navigate('Department.html')">Department</div>
+        </div>
+    </section>
+    
+    <script>
+        function showLogin() {
+            document.getElementById("signup").style.display = "none";
+            document.getElementById("login").style.display = "block";
+        }
+
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("signup").style.display = "none";
+            document.getElementById("home").style.display = "block";
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("login").style.display = "none";
+            document.getElementById("home").style.display = "block";
+        });
+
+        function navigate(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

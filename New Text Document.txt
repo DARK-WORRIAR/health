@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Token System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Healthcare Token Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tokens">Tokens</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#pharmacy">Pharmacy</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to the Healthcare Token System</h2>
+        <p>Book doctor appointments, generate tokens, and purchase medicines online.</p>
+    </section>
+
+    <section id="tokens">
+        <h2>Generate Your Token</h2>
+        <form id="tokenForm">
+            <label for="department">Select Department:</label>
+            <select id="department">
+                <option value="cardiology">Cardiology</option>
+                <option value="medicine">General Medicine</option>
+                <option value="radiology">Radiology</option>
+                <option value="lab">Lab Tests</option>
+            </select>
+            <button type="submit">Get Token</button>
+        </form>
+        <p id="tokenStatus"></p>
+    </section>
+    
+    <section id="doctors">
+        <h2>Available Doctors</h2>
+        <ul>
+            <li>Dr. Ahmed - Cardiology</li>
+            <li>Dr. Fatima - General Medicine</li>
+            <li>Dr. Khan - Radiology</li>
+        </ul>
+    </section>
+    
+    <section id="pharmacy">
+        <h2>Pharmacy</h2>
+        <p>Order your prescribed medicines online.</p>
+    </section>
+    
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
